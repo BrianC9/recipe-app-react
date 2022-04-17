@@ -1,11 +1,9 @@
 import Pages from './pages/Pages';
-function App() {
+export default function App() {
 	return (
 		<div className='App'>
-			<h1>Hello</h1>
+			<h1>Recipes App</h1>
 			<Pages />
 		</div>
 	);
 }
-
-export default App;
