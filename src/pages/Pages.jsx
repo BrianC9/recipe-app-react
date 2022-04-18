@@ -1,4 +1,11 @@
 import Home from './Home';
+import { Route, Routes } from 'react-router-dom';
+import Cuisine from './Cuisine';
 export default function Pages() {
-	return <Home />;
+	return (
+		<Routes>
+			<Route path='/' element={<Home />} />
+			<Route path='cuisine/:typeCuisine' element={<Cuisine />} />
+		</Routes>
+	);
 }
