@@ -17,11 +17,6 @@ export default function Veggie() {
 			});
 		}
 	}, []);
-	console.log('estado vegetarian recipes', recipes);
-	console.log(
-		'localStorage vegetarian',
-		JSON.parse(localStorage.getItem('vegetarianRecipes'))
-	);
 
 	return (
 		<Wrapper>

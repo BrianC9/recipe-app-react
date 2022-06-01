@@ -1,3 +1,4 @@
+
 const API_URL = "https://api.spoonacular.com/";
 const API_KEY = "82489cec06a2481abd433e1af301db95";
 const NUM_RECIPES = 10;
@@ -18,8 +19,9 @@ useEffect(() => {
 
  */
 export async function getPopular() {
+
     try {
-        const response = await fetch(`${API_URL}/recipes/random?apiKey=${API_KEY}&number=${NUM_RECIPES}`);
+        const response = await fetch(`${API_URL}recipes/random?apiKey=${API_KEY}&number=${NUM_RECIPES}`);
         const data = await response.json()
         return data.recipes;
     } catch (error) {
@@ -28,7 +30,7 @@ export async function getPopular() {
 }
 export async function getVegetarian() {
     try {
-        const response = await fetch(`${API_URL}/recipes/random?apiKey=${API_KEY}&tags=vegetarian&number=${NUM_RECIPES}`);
+        const response = await fetch(`${API_URL}recipes/random?apiKey=${API_KEY}&tags=vegetarian&number=${NUM_RECIPES}`);
         const data = await response.json();
         return data.recipes
     } catch (error) {
@@ -37,10 +39,10 @@ export async function getVegetarian() {
 }
 export async function getCuisine(typeCuisine) {
     try {
-        const response = await fetch(`${API_URL}/recipes/complexSearch?cuisine=${typeCuisine}&number=${NUM_RECIPES}&apiKey=${API_KEY}`)
+        const response = await fetch(`${API_URL}recipes/complexSearch?cuisine=${typeCuisine}&number=${NUM_RECIPES}&apiKey=${API_KEY}`)
         const data = await response.json()
-        return data.recipes
+        return data
     } catch (error) {
-
+        console.error("Fallo en la la peticion a tipo de cocina: " + typeCuisine, error)
     }
 }

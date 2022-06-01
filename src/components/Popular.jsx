@@ -17,11 +17,7 @@ export default function Popular() {
 			});
 		}
 	}, []);
-	console.log('estado popular recipes', recipes);
-	console.log(
-		'localStorage popular',
-		JSON.parse(localStorage.getItem('popularRecipes'))
-	);
+
 	return (
 		<Wrapper>
 			<h3>Popular picks</h3>
