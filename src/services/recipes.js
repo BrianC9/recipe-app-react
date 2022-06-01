@@ -46,3 +46,12 @@ export async function getCuisine(typeCuisine) {
         console.error("Fallo en la la peticion a tipo de cocina: " + typeCuisine, error)
     }
 }
+export async function getRecipeBySearch(name) {
+    try {
+        const response = await fetch(`${API_URL}/recipes/complexSearch?query=${name}&apiKey=${API_KEY}&number=15`)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error("Fallo en la petición a busqueda por nombre: " + name, error)
+    }
+}

@@ -78,7 +78,7 @@ const Grid = styled.div`
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	grid-gap: 3rem;
 `;
-const CardCuisine = styled.div`
+const CardGrid = styled.div`
 	img {
 		width: 100%;
 		border-radius: 2rem;
@@ -121,6 +121,6 @@ export {
 	IconList,
 	MenuCategoryNavLink,
 	Grid,
-	CardCuisine,
+	CardGrid,
 	FormSearch,
 };
