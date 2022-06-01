@@ -56,8 +56,8 @@ const MenuCategoryNavLink = styled(NavLink)`
 	align-items: center;
 	justify-content: center;
 	background: linear-gradient(35deg, gray, black);
-	width: 8rem;
-	height: 8rem;
+	min-width: 8rem;
+	min-height: 8rem;
 	cursor: pointer;
 	transform: scale(0.8);
 	border-radius: 50%;
@@ -93,6 +93,27 @@ const CardCuisine = styled.div`
 		cursor: pointer;
 	}
 `;
+const FormSearch = styled.form`
+	position: relative;
+	margin: 2rem 0rem;
+	width: 100%;
+	input {
+		border: none;
+		background: linear-gradient(35deg, #494949, #313131);
+		color: white;
+		border: none;
+		border-radius: 2rem;
+		outline: none;
+		width: 100%;
+		padding: 1rem 3rem;
+	}
+	svg {
+		position: absolute;
+		top: 50%;
+		color: white;
+		transform: translate(100%, -50%);
+	}
+`;
 export {
 	Wrapper,
 	Card,
@@ -101,4 +122,5 @@ export {
 	MenuCategoryNavLink,
 	Grid,
 	CardCuisine,
+	FormSearch,
 };
