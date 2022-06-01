@@ -1,7 +1,7 @@
 
 const API_URL = "https://api.spoonacular.com/";
 const API_KEY = "82489cec06a2481abd433e1af301db95";
-const NUM_RECIPES = 10;
+const NUM_RECIPES = 12;
 /*
 export async function getAllLaunches() {
     try {
