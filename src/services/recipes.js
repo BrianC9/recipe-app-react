@@ -55,3 +55,13 @@ export async function getRecipeBySearch(name) {
         console.error("Fallo en la petición a busqueda por nombre: " + name, error)
     }
 }
+export async function getRecipeDetails(id) {
+    try {
+        const response = await fetch(`${API_URL}/recipes/716429/information?apiKey=${API_KEY}`)
+        const data = await response.json()
+        return data
+    } catch (error) {
+        console.error("Error en la petición de buscar receta por id: " + id, error)
+    }
+
+}

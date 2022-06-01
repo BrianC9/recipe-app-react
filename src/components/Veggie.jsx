@@ -3,7 +3,7 @@ import * as API from '../services/recipes';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Wrapper, Card, Gradient } from '../styledComponents';
-
+import { Link } from 'react-router-dom';
 export default function Veggie() {
 	const [recipes, setRecipes] = useState([]);
 	useEffect(() => {
@@ -35,11 +35,15 @@ export default function Veggie() {
 				{recipes.map(recipe => {
 					return (
 						<SplideSlide key={recipe.id}>
-							<Card>
-								<p>{recipe.title}</p>
-								<img src={recipe.image ?? 'https://i.imgur.com/BM5i2p3.jpeg'} />
-								<Gradient />
-							</Card>
+							<Link to={`/recipe/${recipe.id}`}>
+								<Card>
+									<p>{recipe.title}</p>
+									<img
+										src={recipe.image ?? 'https://i.imgur.com/BM5i2p3.jpeg'}
+									/>
+									<Gradient />
+								</Card>
+							</Link>
 						</SplideSlide>
 					);
 				})}

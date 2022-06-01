@@ -30,8 +30,10 @@ export default function Cuisine() {
 			{cuisine.map(item => {
 				return (
 					<CardGrid key={item.id}>
-						<img src={item.image} alt={item.title} />
-						<h4>{item.title}</h4>
+						<Link to={`/recipe/${item.id}`}>
+							<img src={item.image} alt={item.title} />
+							<h4>{item.title}</h4>
+						</Link>
 					</CardGrid>
 				);
 			})}

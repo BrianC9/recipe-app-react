@@ -1,4 +1,5 @@
-import { useParams } from 'react-router-dom';
+/* eslint-disable react/no-unescaped-entities */
+import { Link, useParams } from 'react-router-dom';
 import { getRecipeBySearch } from '../services/recipes.js';
 import { useEffect, useState } from 'react';
 import { CardGrid, Grid } from '../styledComponents.jsx';
@@ -19,13 +20,15 @@ function SearchResult() {
 	}
 	return (
 		<>
-			<h2 className='titleResultPage'>Recetas para '{searched.search}'</h2>
+			<h2 className='titleResultPage'>Recetas para "{searched.search}"</h2>
 			<Grid>
 				{recipesResults.map(item => {
 					return (
 						<CardGrid key={item.id}>
-							<img src={item.image} alt={item.title} />
-							<h4>{item.title}</h4>
+							<Link to={`/recipe/${item.id}`}>
+								<img src={item.image} alt={item.title} />
+								<h4>{item.title}</h4>
+							</Link>
 						</CardGrid>
 					);
 				})}
