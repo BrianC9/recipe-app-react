@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -73,7 +74,7 @@ const MenuCategoryNavLink = styled(NavLink)`
 		background: linear-gradient(to bottom, #f27121, #e94057);
 	}
 `;
-const Grid = styled.div`
+const Grid = styled(motion.div)`
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 	grid-gap: 3rem;
