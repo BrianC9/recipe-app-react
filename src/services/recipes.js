@@ -1,5 +1,6 @@
 
 const API_URL = "https://api.spoonacular.com/";
+const API_KEY = "82489cec06a2481abd433e1af301db95";
 const NUM_RECIPES = 12;
 /*
 export async function getAllLaunches() {
@@ -20,7 +21,7 @@ useEffect(() => {
 export async function getPopular() {
 
     try {
-        const response = await fetch(`${API_URL}recipes/random?apiKey=${process.env.API_KEY}&number=${NUM_RECIPES}`);
+        const response = await fetch(`${API_URL}recipes/random?apiKey=${API_KEY}&number=${NUM_RECIPES}`);
         const data = await response.json()
         return data.recipes;
     } catch (error) {
@@ -29,7 +30,7 @@ export async function getPopular() {
 }
 export async function getVegetarian() {
     try {
-        const response = await fetch(`${API_URL}recipes/random?apiKey=${process.env.API_KEY}&tags=vegetarian&number=${NUM_RECIPES}`);
+        const response = await fetch(`${API_URL}recipes/random?apiKey=${API_KEY}&tags=vegetarian&number=${NUM_RECIPES}`);
         const data = await response.json();
         return data.recipes
     } catch (error) {
@@ -38,7 +39,7 @@ export async function getVegetarian() {
 }
 export async function getCuisine(typeCuisine) {
     try {
-        const response = await fetch(`${API_URL}recipes/complexSearch?cuisine=${typeCuisine}&number=${NUM_RECIPES}&apiKey=${process.env.API_KEY}`)
+        const response = await fetch(`${API_URL}recipes/complexSearch?cuisine=${typeCuisine}&number=${NUM_RECIPES}&apiKey=${API_KEY}`)
         const data = await response.json()
         return data
     } catch (error) {
@@ -47,7 +48,7 @@ export async function getCuisine(typeCuisine) {
 }
 export async function getRecipeBySearch(name) {
     try {
-        const response = await fetch(`${API_URL}/recipes/complexSearch?query=${name}&apiKey=${process.env.API_KEY}&number=15`)
+        const response = await fetch(`${API_URL}/recipes/complexSearch?query=${name}&apiKey=${API_KEY}&number=15`)
         const data = await response.json()
         return data
     } catch (error) {
@@ -56,7 +57,7 @@ export async function getRecipeBySearch(name) {
 }
 export async function getRecipeDetails(id) {
     try {
-        const response = await fetch(`${API_URL}/recipes/${id}/information?apiKey=${process.env.API_KEY}`)
+        const response = await fetch(`${API_URL}/recipes/${id}/information?apiKey=${API_KEY}`)
         const data = await response.json()
         return data
     } catch (error) {
